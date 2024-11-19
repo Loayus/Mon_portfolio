@@ -4,7 +4,7 @@ import ImageAttente from "../assets/test.png"; // Assurez-vous que le chemin est
 import newImage1 from "../assets/LyceeDiderot.jpg"; // Assurez-vous que le chemin est correct
 import newImage2 from "../assets/IutLens.jpg"; // Assurez-vous que le chemin est correct
 import newImage3 from "../assets/LeclercDrive.15.44.png"; // Assurez-vous que le chemin est correct
-import newImage4 from "../assets/LyceeDiderot.jpg"; // Assurez-vous que le chemin est correct
+import newImage4 from "../assets/IutLens.jpg"; // Assurez-vous que le chemin est correct
 
 const Experience = () => {
     return (
