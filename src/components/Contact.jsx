@@ -1,5 +1,7 @@
 import { CONTACT } from "../constants";
 import { motion } from "framer-motion";
+import CV_FR from '../assets/CV_Antoine_LEDOUX_FR.pdf';
+import CV_EN from '../assets/CV_Antoine_LEDOUX_EN.pdf';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const copyToClipboard = (text) => {
@@ -58,17 +60,19 @@ const Contact = () => {
                     </a>
                 </motion.div>
                 <motion.div
-                    whileInView={{ opacity: 1, x: 0 }}
-                    initial={{ opacity: 0, x: 100 }}
-                    transition={{ duration: 2 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileInView={{opacity: 1, x: 0}}
+                    initial={{opacity: 0, x: 100}}
+                    transition={{duration: 2}}
+                    whileHover={{scale: 1.1}}
+                    whileTap={{scale: 0.9}}
                     className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-md transform transition-transform"
                 >
-                    <a href="../assets/CV_Antoine_LEDOUX_FR.pdf" download className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
+                    <a href={CV_FR} download
+                       className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
                         Télécharger CV Français
                     </a>
-                    <a href="../assets/CV_Antoine_LEDOUX_EN.pdf" download className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
+                    <a href={CV_EN} download
+                       className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
                         Télécharger CV Anglais
                     </a>
                 </motion.div>
