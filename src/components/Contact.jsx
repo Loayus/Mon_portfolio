@@ -36,26 +36,29 @@ const Contact = () => {
                     <p className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">{CONTACT.address}</p>
                 </motion.div>
                 <motion.div
-                    whileInView={{ opacity: 1, x: 0 }}
-                    initial={{ opacity: 0, x: 100 }}
-                    transition={{ duration: 2 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileInView={{opacity: 1, x: 0}}
+                    initial={{opacity: 0, x: 100}}
+                    transition={{duration: 2}}
+                    whileHover={{scale: 1.1}}
+                    whileTap={{scale: 0.9}}
                     className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-md transform transition-transform"
                 >
-                    <FaPhoneAlt className="text-2xl text-green-500" />
-                    <p className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">{CONTACT.phoneNo}</p>
+                    <FaPhoneAlt className="text-2xl text-green-500"/>
+                    <a href="tel:+33 7 43 30 93 48"
+                       className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
+                        {CONTACT.phoneNo}
+                    </a>
                 </motion.div>
                 <motion.div
-                    whileInView={{ opacity: 1, x: 0 }}
-                    initial={{ opacity: 0, x: -100 }}
-                    transition={{ duration: 2 }}
+                    whileInView={{opacity: 1, x: 0}}
+                    initial={{opacity: 0, x: -100}}
+                    transition={{duration: 2 }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-md transform transition-transform"
                 >
                     <FaEnvelope className="text-2xl text-red-500" />
-                    <a href="#" className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600" onClick={() => copyToClipboard(CONTACT.email)}>
+                    <a href="mailto:ledouxantoine62@gmail.com" className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
                         {CONTACT.email}
                     </a>
                 </motion.div>
