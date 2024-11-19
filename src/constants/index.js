@@ -36,7 +36,7 @@ export const EXPERIENCES = [{
     role: "Etudiant en BUT Informatique",
     company: "BUT2 IUT Lens",
     description: `Deuxième année de BUT Informatique. Approfondissement des connaissances en informatique et des technologies web.`,
-    technologies: ["Java", "PHP", "Sql", "Psql", "Html", "Html", "Python"],
+    technologies: ["Java", "PHP", "Sql", "Psql", "Html", "Python"],
 },];
 
 export const PROJECTS = [{
