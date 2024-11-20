@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Circle, Marker, Popup } from 'react-leaflet';
+import {MapContainer, TileLayer, Circle, Popup, CircleMarker} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { HERO_CONTENT, HERO_CONTENT2 } from "../constants";
 import { motion } from "framer-motion";
@@ -73,11 +73,11 @@ const Hero = () => {
                                     radius={radius}
                                     pathOptions={{ color: 'red', fillColor: 'red', fillOpacity: 0.3 }}
                                 />
-                                <Marker position={libercourtCoords}>
+                                <CircleMarker center={libercourtCoords} radius={40} pathOptions={{color: 'black'}}>
                                     <Popup>
                                         Libercourt, France
                                     </Popup>
-                                </Marker>
+                                </CircleMarker>
                             </MapContainer>
                         </motion.div>
                     </div>
