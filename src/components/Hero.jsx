@@ -63,7 +63,17 @@ const Hero = () => {
                             transition={{ duration: 1, delay: 1.2 }}
                             className="w-full h-96 lg:h-[500px]" // Adjust the height here
                         >
-                            <MapContainer center={libercourtCoords} zoom={6} scrollWheelZoom={false} className="h-full w-full">
+                            <MapContainer
+                                center={libercourtCoords}
+                                zoom={6}
+                                scrollWheelZoom={false}
+                                style={{
+                                    borderRadius: '20px', // Ajustez la valeur du rayon des bords
+                                    overflow: 'hidden',   // Assurez que le contenu respecte le rayon
+                                    width: '100%',        // Maintenir les dimensions
+                                    height: '100%',       // Maintenir les dimensions
+                                }}
+                            >
                                 <TileLayer
                                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -73,12 +83,11 @@ const Hero = () => {
                                     radius={radius}
                                     pathOptions={{ color: 'red', fillColor: 'red', fillOpacity: 0.3 }}
                                 />
-                                <CircleMarker center={libercourtCoords} radius={40} pathOptions={{color: 'black'}}>
-                                    <Popup>
-                                        Libercourt, France
-                                    </Popup>
+                                <CircleMarker center={libercourtCoords} radius={40} pathOptions={{ color: 'black' }}>
+                                    <Popup>Libercourt, France</Popup>
                                 </CircleMarker>
                             </MapContainer>
+
                         </motion.div>
                     </div>
                 </div>

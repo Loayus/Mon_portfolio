@@ -43,15 +43,15 @@ const About = () => {
                 >
                     <div
                         className="flex justify-center lg:justify-start">
-                        <p className="my-2 max-w-xl py-6 text-xl">{ABOUT_TEXT}</p>
+                        <p className="mt-14 my-2 max-w-xl pt-6 font-light tracking-tighter text-xl">{ABOUT_TEXT}</p>
                     </div>
                     <div
                         className="flex justify-center lg:justify-start">
-                        <p className="my-2 max-w-xl py-6 text-xl">{ABOUT_TEXT2}</p>
+                        <p className="mt-10 my-2 max-w-xl pt-6 font-light tracking-tighter text-xl">{ABOUT_TEXT2}</p>
                     </div>
                     <div
                         className="flex justify-center lg:justify-start">
-                        <p className="my-2 max-w-xl py-6 text-xl">{ABOUT_TEXT3}</p>
+                        <p className="mt-10 my-2 max-w-xl pt-6 font-light tracking-tighter text-xl">{ABOUT_TEXT3}</p>
                     </div>
                 </motion.div>
             </div>

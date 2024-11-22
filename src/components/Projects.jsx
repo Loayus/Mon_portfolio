@@ -1,13 +1,12 @@
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
-import newImage1 from "../assets/site.png"; // Assurez-vous que le chemin est correct
-import newImage2 from "../assets/puissance4.png"; // Assurez-vous que le chemin est correct
-import newImage3 from "../assets/portfolio.png"; // Assurez-vous que le chemin est correct
+import newImage1 from "../assets/site.png";
+import newImage2 from "../assets/puissance4.png";
+import newImage3 from "../assets/portfolio.png";
 import newImage4 from "../assets/flatcraft.png";
-import ImageAttente from "../assets/pacman.png"; // Assurez-vous que le chemin est correct
+import ImageAttente from "../assets/pacman.png";
 
 const Projects = () => {
-
     return (
         <div className="border-b border-neutral-900 pb-4">
             <motion.h2
@@ -18,38 +17,31 @@ const Projects = () => {
             >
                 Projets
             </motion.h2>
-            <div>
+            <div className="flex flex-wrap justify-center">
                 {PROJECTS.map((project, index) => (
-                    <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-                        <motion.div
-                            whileInView={{opacity: 1, x: 0}}
-                            initial={{opacity: 0, x: -100}}
-                            transition={{duration: 1}}
-                            className="w-full lg:w-1/4"
-                        >
-                            <img
-                                src={index === 0 ? newImage1 : index === 1 ? newImage2 : index === 2 ? newImage3 : index === 3 ? newImage4 : ImageAttente}
-                                alt="Experience Image" className="mb-4 w-32 h-auto mx-4 ml-auto"/>
-
-                        </motion.div>
-                        <motion.div
-                            whileInView={{opacity: 1, x: 0}}
-                            initial={{opacity: 0, x: 100}}
-                            transition={{duration: 1}}
-                            className="w-full max-w-xl lg:w-3/4"
-                        >
-                            <h6 className="mb-2 font-semibold">{project.title}</h6>
-                            <p className="mb-4 text-neutral-400">{project.description}</p>
-                            {project.technologies.map((tech, index) => (
-                                <span
-                                    key={index}
-                                    className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-900"
-                                >
-                                    {tech}
-                                </span>
-                            ))}
-                        </motion.div>
-                    </div>
+                    <motion.div
+                        key={index}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 100 }}
+                        transition={{ duration: 0.5 }}
+                        className="project-card w-full lg:w-1/3"
+                    >
+                        <img
+                            src={index === 0 ? newImage1 : index === 1 ? newImage2 : index === 2 ? newImage3 : index === 3 ? newImage4 : ImageAttente}
+                            alt="Project Image"
+                        />
+                        <div className="project-card-content">
+                            <h6 className="project-card-title">{project.title}</h6>
+                            <p className="project-card-description">{project.description}</p>
+                            <div>
+                                {project.technologies.map((tech, index) => (
+                                    <span key={index} className="project-card-tech">
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
