@@ -7,7 +7,7 @@ export const HERO_CONTENT2 = `🚀 Recherche d'une alternance à partir de janvi
 
 export const ABOUT_TEXT = `👋 Hello ! Moi, c’est Antoine, étudiant en deuxième année de BUT Informatique à l’IUT de Lens. Passionné par le développement 💻 et curieux de tout 🌍, j’adore créer et relever des défis. `
 export const ABOUT_TEXT2 = `Que ce soit en développant des sites web 🌐, en programmant des jeux interactifs 🎮 ou en travaillant sur des bases de données 📊, je suis toujours prêt à apprendre et à m'améliorer !`
-export const ABOUT_TEXT3 = `En dehors des études, j’ai aussi acquis de l’expérience en gestion et relation client grâce à mon travail chez Leclerc Drive 🚚. Cette expérience m’a appris à gérer des situations complexes tout en restant à l’écoute des besoins des autres 🤝.`
+export const ABOUT_TEXT3 = `En dehors des études, j’ai aussi acquis de l’expérience en gestion et relation client grâce à mon travail chez Leclerc Drive 🚚. Cette expérience m’apprend à gérer des situations complexes tout en restant à l’écoute des besoins des autres 🤝.`
 
 export const EXPERIENCES = [{
     year: "2024 - 2025",
