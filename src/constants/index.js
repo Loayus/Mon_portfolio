@@ -10,17 +10,11 @@ export const ABOUT_TEXT2 = `Que ce soit en développant des sites web 🌐, en p
 export const ABOUT_TEXT3 = `En dehors des études, j’ai aussi acquis de l’expérience en gestion et relation client grâce à mon travail chez Leclerc Drive 🚚. Cette expérience m’a appris à gérer des situations complexes tout en restant à l’écoute des besoins des autres 🤝.`
 
 export const EXPERIENCES = [{
-    year: "2023",
-    role: "Détention Baccalauréat Général",
-    company: "Diderot Carvin",
-    description: `Obtention du Baccalauréat Général Scientifique option Mathématique expert avec mention Bien.`,
-    technologies: ["Mathématiques", "Physique-Chimie", "SVT"],
-}, {
-    year: "2023 - 2024",
+    year: "2024 - 2025",
     role: "Etudiant en BUT Informatique",
-    company: "BUT1 IUT Lens",
-    description: `Première année de BUT Informatique. Découverte des bases de l'informatique et des technologies web.`,
-    technologies: ["HTML", "CSS", "Java", "JavaFX", "Sql", "Réseau", "Python" ],
+    company: "BUT2 IUT Lens",
+    description: `Deuxième année de BUT Informatique. Approfondissement des connaissances en informatique et des technologies web.`,
+    technologies: ["Java", "PHP", "Sql", "Psql", "Html", "Python"],
 }, {
     year: "Février 2024 - présent",
     role: "Employé Leclerc.Drive",
@@ -32,11 +26,17 @@ export const EXPERIENCES = [{
     Aide à la formation de nouveaux employés.`,
     technologies: ["Gestion de stock", "Gestion de client", "Gestion de commande"],
 }, {
-    year: "2024 - 2025",
+    year: "2023 - 2024",
     role: "Etudiant en BUT Informatique",
-    company: "BUT2 IUT Lens",
-    description: `Deuxième année de BUT Informatique. Approfondissement des connaissances en informatique et des technologies web.`,
-    technologies: ["Java", "PHP", "Sql", "Psql", "Html", "Python"],
+    company: "BUT1 IUT Lens",
+    description: `Première année de BUT Informatique. Découverte des bases de l'informatique et des technologies web.`,
+    technologies: ["HTML", "CSS", "Java", "JavaFX", "Sql", "Réseau", "Python" ],
+}, {
+    year: "2023",
+    role: "Détention Baccalauréat Général",
+    company: "Diderot Carvin",
+    description: `Obtention du Baccalauréat Général Scientifique option Mathématique expert avec mention Bien.`,
+    technologies: ["Mathématiques", "Physique-Chimie", "SVT"],
 },];
 
 export const PROJECTS = [{

@@ -27,7 +27,7 @@ const Experience = () => {
                             className="w-full lg:w-1/4 flex items-center"
                         >
                             <p className="mb-2 text-sm text-neutral-400">{experience.year}</p>
-                            <img src={index === 0 ? newImage1 : index === 1 ? newImage2 : index === 2 ? newImage3 : index === 3 ? newImage4 : ImageAttente} alt="Experience Image" className="mb-4 w-32 h-auto mx-4 ml-auto" />
+                            <img src={index === 3 ? newImage1 : index === 2 ? newImage2 : index === 1 ? newImage3 : index === 0 ? newImage4 : ImageAttente} alt="Experience Image" className="mb-4 w-32 h-auto mx-4 ml-auto" />
                         </motion.div>
                         <motion.div
                             whileInView={{ opacity: 1, x: 0 }}
