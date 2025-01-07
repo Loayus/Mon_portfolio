@@ -1,4 +1,4 @@
-import { EXPERIENCES } from "../constants";
+import { EXPERIENCES, EXPERIENCES_EN } from "../constants";
 import { motion } from "framer-motion";
 import ImageAttente from "../assets/test.png"; // Assurez-vous que le chemin est correct
 import newImage1 from "../assets/LyceeDiderot.jpg"; // Assurez-vous que le chemin est correct
@@ -6,7 +6,9 @@ import newImage2 from "../assets/IutLens.jpg"; // Assurez-vous que le chemin est
 import newImage3 from "../assets/LeclercDrive.15.44.png"; // Assurez-vous que le chemin est correct
 import newImage4 from "../assets/IutLens.jpg"; // Assurez-vous que le chemin est correct
 
-const Experience = () => {
+const Experience = ({ language }) => {
+    const experiences = language === "fr" ? EXPERIENCES : EXPERIENCES_EN;
+
     return (
         <div className="border-b border-neutral-900 pb-4">
             <motion.h2
@@ -15,10 +17,10 @@ const Experience = () => {
                 transition={{ duration: 0.5 }}
                 className="my-20 text-center text-4xl"
             >
-                Experience
+                {language === "fr" ? "Experience" : "Experience"}
             </motion.h2>
             <div>
-                {EXPERIENCES.map((experience, index) => (
+                {experiences.map((experience, index) => (
                     <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
                         <motion.div
                             whileInView={{ opacity: 1, x: 0 }}

@@ -1,4 +1,4 @@
-import { CONTACT } from "../constants";
+import { CONTACT, CONTACT_EN } from "../constants";
 import { motion } from "framer-motion";
 import CV_FR from '../assets/CV_Antoine_LEDOUX_FR.pdf';
 import CV_EN from '../assets/CV_Antoine_LEDOUX_EN.pdf';
@@ -12,7 +12,9 @@ const copyToClipboard = (text) => {
     });
 };
 
-const Contact = () => {
+const Contact = ({ language }) => {
+    const contact = language === "fr" ? CONTACT : CONTACT_EN;
+
     return (
         <div className="border-b border-neutral-900 pb-20">
             <motion.h2
@@ -21,7 +23,7 @@ const Contact = () => {
                 transition={{ duration: 0.5 }}
                 className="my-10 text-center text-4xl text-white"
             >
-                Contactez moi !
+                {language === "fr" ? "Contactez moi !" : "Contact Me!"}
             </motion.h2>
             <div className="flex flex-col items-center space-y-6">
                 <motion.div
@@ -33,7 +35,7 @@ const Contact = () => {
                     className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-md transform transition-transform"
                 >
                     <FaMapMarkerAlt className="text-2xl text-blue-500" />
-                    <p className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">{CONTACT.address}</p>
+                    <p className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">{contact.address}</p>
                 </motion.div>
                 <motion.div
                     whileInView={{opacity: 1, x: 0}}
@@ -44,9 +46,9 @@ const Contact = () => {
                     className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-md transform transition-transform"
                 >
                     <FaPhoneAlt className="text-2xl text-green-500"/>
-                    <a href="tel:+33 7 43 30 93 48"
+                    <a href={`tel:${contact.phoneNo}`}
                        className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
-                        {CONTACT.phoneNo}
+                        {contact.phoneNo}
                     </a>
                 </motion.div>
                 <motion.div
@@ -58,8 +60,8 @@ const Contact = () => {
                     className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-md transform transition-transform"
                 >
                     <FaEnvelope className="text-2xl text-red-500" />
-                    <a href="mailto:ledouxantoine62@gmail.com" className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
-                        {CONTACT.email}
+                    <a href={`mailto:${contact.email}`} className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
+                        {contact.email}
                     </a>
                 </motion.div>
                 <motion.div
@@ -70,13 +72,9 @@ const Contact = () => {
                     whileTap={{scale: 0.9}}
                     className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg shadow-md transform transition-transform"
                 >
-                    <a href={CV_FR} download
+                    <a href={language === "fr" ? CV_FR : CV_EN} download
                        className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
-                        Télécharger CV Français
-                    </a>
-                    <a href={CV_EN} download
-                       className="px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600">
-                        Télécharger CV Anglais
+                        {language === "fr" ? "Télécharger CV Français" : "Download CV English"}
                     </a>
                 </motion.div>
             </div>

@@ -10,6 +10,7 @@ import Sidebar from "./components/Slidebar.jsx";
 
 const App = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [language, setLanguage] = useState("fr");
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -27,6 +28,10 @@ const App = () => {
         };
     }, []);
 
+    const toggleLanguage = () => {
+        setLanguage((prevLanguage) => (prevLanguage === "fr" ? "en" : "fr"));
+    };
+
     return (
         <Router>
             <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
@@ -34,7 +39,7 @@ const App = () => {
                     <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#3d3014_100%)]"></div>
                 </div>
 
-                <Sidebar />
+                <Sidebar toggleLanguage={toggleLanguage} language={language} />
 
                 <div className="container mx-auto px-8 relative z-10">
                     <Routes>
@@ -43,22 +48,22 @@ const App = () => {
                             element={
                                 <>
                                     <section id="hero">
-                                        <Hero />
+                                        <Hero language={language} />
                                     </section>
                                     <section id="about">
-                                        <About />
+                                        <About language={language} />
                                     </section>
                                     <section id="technologies">
-                                        <Technologies />
+                                        <Technologies language={language} />
                                     </section>
                                     <section id="experience">
-                                        <Experience />
+                                        <Experience language={language} />
                                     </section>
                                     <section id="projects">
-                                        <Projects />
+                                        <Projects language={language} />
                                     </section>
                                     <section id="contact">
-                                        <Contact />
+                                        <Contact language={language} />
                                     </section>
                                 </>
                             }

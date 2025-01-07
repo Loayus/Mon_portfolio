@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 
-const Sidebar = () => {
+const Sidebar = ({ toggleLanguage, language }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isMouseInSidebar, setIsMouseInSidebar] = useState(false);
 
@@ -52,6 +52,9 @@ const Sidebar = () => {
                     <button className="mb-4 px-4 py-2 text-left rounded bg-gray-700 hover:bg-gray-600"
                             onClick={() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'})}>
                         Contact
+                    </button>
+                    <button onClick={toggleLanguage} className="mt-auto bg-blue-500 text-white px-4 py-2 rounded">
+                        {language === "fr" ? "Translate to English" : "Traduire en Français"}
                     </button>
                 </div>
             </div>

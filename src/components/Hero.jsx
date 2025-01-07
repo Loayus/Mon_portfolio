@@ -1,18 +1,18 @@
-import {MapContainer, TileLayer, Circle, Popup, CircleMarker} from 'react-leaflet';
+import { MapContainer, TileLayer, Circle, Popup, CircleMarker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import {HERO_CONTENT, HERO_CONTENT2} from "../constants";
-import {motion} from "framer-motion";
+import { HERO_CONTENT, HERO_CONTENT2, HERO_CONTENT_EN, HERO_CONTENT2_EN } from "../constants";
+import { motion } from "framer-motion";
 
 const container = (delay) => ({
-    hidden: {x: -100, opacity: 0},
+    hidden: { x: -100, opacity: 0 },
     visible: {
         x: 0,
         opacity: 1,
-        transition: {duration: 0.5, delay: delay},
+        transition: { duration: 0.5, delay: delay },
     },
 });
 
-const Hero = () => {
+const Hero = ({ language }) => {
     const libercourtCoords = [50.482, 2.912]; // Coordinates for Libercourt, France
     const radius = 150000; // Radius in meters (150 km)
 
@@ -35,7 +35,7 @@ const Hero = () => {
                             animate="visible"
                             className="bg-gradient-to-r from-yellow-800 via-orange-700 to-red-700 bg-clip-text text-4xl tracking-tight text-transparent"
                         >
-                            Développeur Junior
+                            {language === "fr" ? "Développeur Junior" : "Junior Developer"}
                         </motion.span>
                         <motion.p
                             variants={container(1)}
@@ -43,7 +43,7 @@ const Hero = () => {
                             animate="visible"
                             className="my-2 max-w-xl pt-6 font-light tracking-tighter text-xl"
                         >
-                            {HERO_CONTENT}
+                            {language === "fr" ? HERO_CONTENT : HERO_CONTENT_EN}
                         </motion.p>
                         <motion.p
                             variants={container(1)}
@@ -51,16 +51,16 @@ const Hero = () => {
                             animate="visible"
                             className="my-2 max-w-xl pt-6 font-light tracking-tighter text-xl"
                         >
-                            {HERO_CONTENT2}
+                            {language === "fr" ? HERO_CONTENT2 : HERO_CONTENT2_EN}
                         </motion.p>
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2 lg:p-8 ">
                     <div className="flex justify-center pt-10">
                         <motion.div
-                            initial={{x: 100, opacity: 0}}
-                            animate={{x: 0, opacity: 1}}
-                            transition={{duration: 1, delay: 1.2}}
+                            initial={{ x: 100, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 1, delay: 1.2 }}
                             className="w-full h-96 lg:h-[500px]" // Adjust the height here
                         >
                             <MapContainer
@@ -81,9 +81,9 @@ const Hero = () => {
                                 <Circle
                                     center={libercourtCoords}
                                     radius={radius}
-                                    pathOptions={{color: 'red', fillColor: 'red', fillOpacity: 0.3}}
+                                    pathOptions={{ color: 'red', fillColor: 'red', fillOpacity: 0.3 }}
                                 />
-                                <CircleMarker center={libercourtCoords} radius={40} pathOptions={{color: 'black'}}>
+                                <CircleMarker center={libercourtCoords} radius={40} pathOptions={{ color: 'black' }}>
                                     <Popup>Libercourt, France</Popup>
                                 </CircleMarker>
                             </MapContainer>

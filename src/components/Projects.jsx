@@ -1,4 +1,4 @@
-import { PROJECTS } from "../constants";
+import { PROJECTS, PROJECTS_EN } from "../constants";
 import { motion } from "framer-motion";
 import newImage1 from "../assets/site.png";
 import newImage2 from "../assets/puissance4.png";
@@ -6,7 +6,9 @@ import newImage3 from "../assets/portfolio.png";
 import newImage4 from "../assets/flatcraft.png";
 import ImageAttente from "../assets/pacman.png";
 
-const Projects = () => {
+const Projects = ({ language }) => {
+    const projects = language === "fr" ? PROJECTS : PROJECTS_EN;
+
     return (
         <div className="border-b border-neutral-900 pb-4">
             <motion.h2
@@ -15,10 +17,10 @@ const Projects = () => {
                 transition={{ duration: 0.5 }}
                 className="my-20 text-center text-4xl"
             >
-                Projets
+                {language === "fr" ? "Projets" : "Projects"}
             </motion.h2>
             <div className="flex flex-wrap justify-center">
-                {PROJECTS.map((project, index) => (
+                {projects.map((project, index) => (
                     <motion.div
                         key={index}
                         whileInView={{ opacity: 1, y: 0 }}
